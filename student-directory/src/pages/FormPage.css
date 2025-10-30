@@ -1,0 +1,191 @@
+.formPage {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	justify-content: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.formPage__container {
+  width: 100%;
+  max-width: 680px;
+  background-color: #1E1E2F;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 16px;
+  padding: 40px 36px;
+  box-sizing: border-box;
+}
+
+.formPage__container h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #E0E7FF;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field span {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(248, 250, 252, 0.9);
+}
+
+.field input {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+	width: 500px;
+}
+
+.field input::placeholder {
+  color: rgba(248, 250, 252, 0.5);
+}
+body.theme-light .field input::placeholder { 
+	color: rgba(15,23,42,0.45); 
+}
+
+.field input:focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+  outline: none;
+}
+
+.field small.error {
+  color: #FCA5A5;
+  font-size: 13px;
+}
+
+.field select {
+  background: #1E1E2F;
+  color: #F8FAFC;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.field select:focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  outline: none;
+}
+
+.field select option {
+  background-color: #0F172A;
+  color: #F8FAFC;
+}
+
+body.theme-light .formPage {
+  background-color: #ffffff;
+  color: #0F172A;
+}
+
+body.theme-light .formPage__container {
+  background-color: #f8fafc;
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+body.theme-light .formPage__container h2 {
+  color: #1f2937;
+}
+
+body.theme-light .field span {
+  color: #1f2937;
+}
+
+body.theme-light .field input {
+  background-color: #ffffff;
+  color: #0F172A;
+  border-color: rgba(15, 23, 42, 0.18);
+}
+
+body.theme-light .field select {
+  background: #ffffff;
+  color: #0F172A;
+  border-color: rgba(15, 23, 42, 0.18);
+}
+
+body.theme-light .field select option {
+  background-color: #ffffff;
+  color: #0F172A;
+}
+
+body.theme-light .btn--secondary {
+  color: #0F172A;
+  border-color: rgba(15, 23, 42, 0.18);
+}
+
+.form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.25s ease, transform 0.1s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--primary {
+  background: #6366F1;
+  color: #F8FAFC;
+}
+
+.btn--primary:hover {
+  background: #4F46E5;
+}
+
+.btn--secondary {
+  background: transparent;
+  color: #F8FAFC;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.btn--secondary:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #FCA5A5;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
