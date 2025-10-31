@@ -19,3 +19,32 @@ color: {
   Background: #0F172A
   Text: #F8FAFC
 }
+
+// Project description
+Student Directory is a React web app for managing a student directory. Users can view all students, search for a specific student, and add or edit information. Ideal for practicing React, working with components, states, and APIs.
+
+// installation steps
+npx create-vite@6.5.0
+npm install
+cd student-directory
+
+// how to run the project
+npm run dev
+
+// technologies used
+React.js
+JavaScript (ES6+)
+CSS / CSS Modules
+HTML5
+API
+
+// features list
+
+View all students in a list or grid format
+Search for a student by name
+Add a new student
+Edit existing student data
+Responsive design for mobile and desktop devices
+
+// screenshots of the application
+(./screenshots)

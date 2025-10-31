@@ -5,9 +5,6 @@ import { SearchBar } from '../components/StudentBar';
 import { StudentList } from '../components/StudentList';
 import { deleteStudent, getStudents, updateStudent } from '../services/api';
 import './HomePage.css';
-import { filterStudents } from '../utils/search-filter';
-import { paginateStudents } from '../utils/pagination';
-import { handleScrollDebounced } from '../utils/scroll-handler';
 
 export function HomePage() {
   const [students, setStudents] = useState([]);
@@ -43,7 +40,15 @@ export function HomePage() {
   }, []);
 
   const filteredStudents = useMemo(() => {
-    filterStudents(students, query)
+    const q = query.trim().toLowerCase();
+    if (!q) return students;
+
+    return students.filter((s) => {
+      const name = (s.name || '').toLowerCase();
+      const cls = (s.className || '').toLowerCase();
+      const id = String(s.id || '').toLowerCase();
+      return name.includes(q) || cls.includes(q) || id.includes(q);
+    });
   }, [students, query]);
 
   useEffect(() => {
@@ -52,7 +57,12 @@ export function HomePage() {
   }, [filteredStudents.length]);
 
   const pages = useMemo(() => {
-    paginateStudents(filteredStudents)
+    const size = 9;
+    const chunks = [];
+    for (let i = 0; i < filteredStudents.length; i += size) {
+      chunks.push(filteredStudents.slice(i, i + size));
+    }
+    return chunks;
   }, [filteredStudents]);
 
   useEffect(() => {
@@ -63,7 +73,15 @@ export function HomePage() {
   }, [currentPage]);
 
   function handleScroll(e) {
-    handleScrollDebounced(e, currentPage, setCurrentPage, scrollDebounceRef)
+    const el = e.currentTarget;
+    const width = el.clientWidth;
+
+    if (scrollDebounceRef.current) clearTimeout(scrollDebounceRef.current);
+
+    scrollDebounceRef.current = setTimeout(() => {
+      const pageIndex = Math.round(el.scrollLeft / Math.max(1, width));
+      if (pageIndex !== currentPage) setCurrentPage(pageIndex);
+    }, 120);
   }
 
   function handleAdd() {

@@ -488,15 +488,14 @@ body.theme-light .pager__btn {
   opacity: 1;
 }
 
+@media (max-width: 768px) {
 
-
-@media (max-width: 860px) {
   .home {
-    padding: 0;
+    padding: 20px 16px;
   }
 
   .container {
-    padding: 16px 12px;
+    padding: 16px;
   }
 
   .home__titleRow {
@@ -511,48 +510,112 @@ body.theme-light .pager__btn {
 
   .home__actions {
     width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
-  .home__actions .btn {
-    width: 100%;
-  }
-
-  .toolbar {
-    gap: 10px;
+  .btn {
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 0px;
   }
 
   .searchBar {
-    margin-bottom: 14px;
+    flex-direction: column;
+    width: 300px;
+    margin: 16px 0;
   }
 
   .searchBar input {
-    padding: 12px;
-    font-size: 16px;
+    width: 300px;
+    font-size: 14px;
+    padding: 10px 12px;
+    margin-left: 0px;
   }
 
   .list {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    width: 300px;
   }
 
   .card {
-    padding: 12px;
-    gap: 8px;
-    height: 200px;
+    height: auto;
+    padding: 14px;
+    width: 300px;
+    margin-right: 30px;
   }
 
-  .card__actions {
+  .scroller {
+    width: 300px;
+  }
+
+  .card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .card__avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card__name {
+    font-size: 16px;
+  }
+
+  .card__meta {
+    font-size: 12px;
+  }
+
+  .card__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal__content {
+    inset: 20px 10px;
+    padding: 20px;
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal__header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .modal__avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .modal__body {
+    grid-template-rows: 2fr;
+    gap: 12px;
+  }
+
+  .modal__footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .animated-button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .pager {
+    flex-wrap: wrap;
     gap: 6px;
+    width: 300px;
+  }
+
+  .pager__btn {
+    padding: 6px 10px;
+    font-size: 13px;
   }
 }
-
-@media (min-width: 1200px) {
-  .home__container {
-    max-width: 1400px;
-  }
-
-  .list {
-    gap: 18px;
-  }
-}
-

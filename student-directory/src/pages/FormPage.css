@@ -57,7 +57,7 @@
   padding: 12px 14px;
   font-size: 15px;
   transition: border-color 0.25s, box-shadow 0.25s;
-	width: 500px;
+	width: 600px;
 }
 
 .field input::placeholder {
@@ -87,6 +87,7 @@ body.theme-light .field input::placeholder {
   font-size: 15px;
   cursor: pointer;
   transition: all 0.25s ease;
+  width: 100%;
 }
 
 .field select:focus {
@@ -147,6 +148,12 @@ body.theme-light .btn--secondary {
   margin-top: 10px;
 }
 
+@media (max-width: 640px) {
+  .formPage { padding: 32px 12px; }
+  .formPage__container { padding: 24px 16px; }
+  .formPage__container h2 { font-size: 22px; margin-bottom: 20px; }
+}
+
 .btn {
   border: none;
   border-radius: 10px;
@@ -188,4 +195,62 @@ body.theme-light .btn--secondary {
   border-radius: 8px;
   text-align: center;
   font-size: 14px;
+}
+
+@media (max-width: 640px) {
+
+  .formPage {
+    padding: 24px 10px;
+    margin: 60px 0;
+    justify-content: flex-start;
+    min-height: auto;
+  }
+
+  .formPage__container {
+    padding: 20px 14px;
+    border-radius: 12px;
+  }
+
+  .formPage__container h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+  .form {
+    gap: 16px;
+  }
+
+  .field span {
+    font-size: 14px;
+  }
+
+  .field input,
+  .field select {
+    padding: 10px 12px;
+    font-size: 14px;
+    width: 300px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .form__actions {
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .btn--primary {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+
+  .error {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
 }
